@@ -64,7 +64,13 @@ star.destroy();
 }
 
 function gameScore(){
-score += 1;
-scoreText.setText('Score: ' + score * 100);
-alert('You Win!');
+score += 1 * 100;
+scoreText.setText('Score: ' + score);
+if(score === 100){
+  winCondition();
+}
+}
+
+function winCondition(){
+  alert('You Win');
 }
