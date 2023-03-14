@@ -40,7 +40,7 @@ function create(){
   player.setCollideWorldBounds(true);
   cursors = this.input.keyboard.createCursorKeys();
   scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
-  this.physics.add.overlap(player,star,starOverlap,starCollide);
+  this.physics.add.overlap(player,star,starOverlap,gameScore);
 }
 
 function update(){
@@ -59,12 +59,11 @@ function update(){
 }
 
 }
-
-
-function starOverlap(player, star){
-  star.destroy();
+function starOverlap(){
+star.destroy();
 }
-function starCollide(){
+
+function gameScore(){
 score += 1;
 scoreText.setText('Score: ' + score * 100);
 alert('You Win!');
